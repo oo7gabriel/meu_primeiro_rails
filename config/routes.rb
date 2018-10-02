@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
-  get 'stores/new'
-  get 'stores/create'
-  get 'stores/edit'
-  get 'stores/uptade'
-  get 'stores/destroy'
+
+
+  get 'stores/index/' => 'stores#index' , as: 'stores_index'
+  get 'stores/show/:idshopping' => 'stores#show' , as: 'stores_show'
+  get 'stores/new/' => 'stores#new' , as: 'stores_new'
+  post 'stores/create' => 'stores#create' , as: 'stores_create'
+  get 'stores/edit/:idshopping' => 'stores#edit' , as: 'stores_edit'
+  patch 'stores/uptade/:idshopping' => 'stores#uptade' , as: 'stores_uptade'
+  delete 'stores/destroy/:idshopping' => 'stores#destroy' , as: 'stores_destroy'
+
   get 'shopping/index' => 'shopping#index' , as: 'shopping_index'
    get 'shopping/show/:id' => 'shopping#show' , as: 'shopping_show'
   get 'shopping/new' => 'shopping#new' , as: 'shopping_new'

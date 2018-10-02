@@ -1,0 +1,31 @@
+<h1>Local das Lojas</h1>
+
+
+
+<table border="2px" style="width: 50%">
+	<tr>
+		<td>Nome</td>
+		<td>Alterar</td>
+		<td>remover</td>
+	</tr>
+
+
+<%  @stores.each do |stores| %>
+
+	<tr>
+		<td><%= link_to stores.name ,stores_show_path(stores.id) %></td>
+		<td><%= link_to 'Alterar', stores_edit_path(stores.id)%></td>
+		<td><%=link_to 'Remover', stores_destroy_path(stores.id) , :method => 'delete'  %></td>
+
+
+	</tr>
+
+	<tr>
+		<%= link_to "Adicionar uma loja a este shopping:", stores_new_path %>
+	</tr>
+	<% end %>
+</table>
+
+		<td><%= link_to 'Voltar', stores_new_path %></td>
+
+

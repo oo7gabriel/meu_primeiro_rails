@@ -1,2 +1,11 @@
-<h1>Stores#new</h1>
-<p>Find me in app/views/stores/new.html.erb</p>
+<h1>Cadastro de Lojas </h1>
+
+<%= form_for @store, url: stores_create_path do |f| %>
+	<%= f.label :name, 'Nome' %>
+	<%= f.text_field :name %>
+	<%= f.label :floor , 'Piso' %>
+	<%= f.text_field :floor %>
+	<%= f.submit 'Salvar' %>
+<% end %>
+<br/>
+<%= link_to "Ver lista de lojas", stores_index_path %>
