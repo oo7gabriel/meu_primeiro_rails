@@ -5,7 +5,7 @@ class StoresController < ApplicationController
   end
 
   def show
-    @store = Store.find_by(idshopping: params['idshopping'])
+    @store = Store.find_by(id: params['id'])
   end
 
   def new
@@ -17,29 +17,29 @@ class StoresController < ApplicationController
     if store.save
       @msg = 'valores foram salvos'
     else
-      @msg = store.errors.messages
+      @msg = shop.errors.messages
     end
   end
 
   def edit
-    @store = Store.find_by(idshopping: params['idshopping'])   
+    @store = Store.find_by(id: params['id'])   
   end
 
   def uptade
-        store = Store.find_by(idshopping: params['idshopping'])
+       store = Store.find_by(id: params['id'])
         if store.update_attributes(permit)
           @msg= "Atualizado com sucesso"
         else
-          @msg =store.errors.messages 
-      end
+          @msg =shop.errors.messages 
+     end
   end
 
   def destroy
-           store = Stores.find_by(idshopping: params['idshopping'])
+           store = Store.find_by(id: params['id'])
         if store.destroy
           @msg= "Deletado com sucesso"
         else
-          @msg =store.errors.messages 
+          @msg =shop.errors.messages 
       end
   end
 

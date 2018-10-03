@@ -7,7 +7,7 @@
 		<td>Nome</td>
 		<td>Lista de lojas</td>
 		<td>Alterar</td>
-		<td>remover</td>
+		<td>Remover</td>
 	</tr>
 
 
@@ -15,7 +15,7 @@
 
 	<tr>
 		<td><%= link_to  shop.name ,shopping_show_path(shop.id) %></td>
-		<td>Lista de lojas</td>
+		<td><<%= link_to "Lista de Lojas", stores_index_path(@stores.id) %></td>
 		<td><%= link_to 'Alterar', shopping_edit_path(shop.id)%></td>
 		<td><%=link_to 'Remover', shopping_destroy_path(shop.id) , :method => 'delete'  %></td>
 

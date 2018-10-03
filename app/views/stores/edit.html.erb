@@ -1,9 +1,10 @@
-<h1>Alterar de Shop </h1>
+<h1>Alterar de Loja </h1>
 
-<%= form_for @shop, url: stores_uptade_path(@stores.id) do |f| %>
+<%= form_for @store, url: stores_uptade_path(@store.id) do |f| %>
 	<%= f.label :name, 'Nome' %>
 	<%= f.text_field :name %>
-	<%= f.label :floor , 'Andar' %>
+	<%= f.label :floor , 'Piso' %>
 	<%= f.text_field :floor %>
+	<% hidden_field_tag :id , :idshopping%>
 	<%= f.submit 'Alterar' %>
 <% end %>
